@@ -1,0 +1,19 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/script4.ts",
+  "scripts": {
+    "dev": "nodemon scripts/script4.ts",
+    "compile": "tsc scripts/script4.ts -w",
+    "parallel": "concurrently \\\"nodemon script4.ts\\\" \\\"tsc scripts/script4.ts -w --pretty\\\" "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
+  }
+}
