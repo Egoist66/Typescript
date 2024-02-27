@@ -7,6 +7,7 @@ let some: unknown;
 
 let someVal: unknown = 10
 
+
 function fetchData(data: unknown): void {
     if(typeof data === 'string'){
         console.log(data.toUpperCase());
