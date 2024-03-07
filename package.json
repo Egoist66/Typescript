@@ -4,9 +4,9 @@
   "description": "",
   "main": "scripts/script4.ts",
   "scripts": {
-    "dev": "nodemon scripts/script5.ts",
-    "compile": "tsc scripts/script5.ts -w",
-    "parallel": "concurrently \\\"nodemon script5.ts\\\" \\\"tsc scripts/script5.ts -w --pretty\\\" "
+    "dev": "nodemon scripts/script6.ts",
+    "compile": "tsc scripts/script6.ts -w",
+    "parallel": "concurrently \\\"nodemon script5.ts\\\" \\\"tsc scripts/script6.ts -w --pretty\\\" "
   },
   "keywords": [],
   "author": "",

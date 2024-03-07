@@ -105,51 +105,102 @@
 // num = num2
 //
 
-type MatchType =
-    boolean
-    | number
-    | string
-    | object
-    | null
-    | undefined
-    | bigint
-    | symbol
-    | HTMLElement
-function is(entity: unknown, matchType: MatchType): entity is MatchType{
-    return typeof entity === matchType
-}
-function isNumber(n: number | string[] | boolean): n is number {
-    return  typeof n === "number"
-}
+// type MatchType =
+//     boolean
+//     | number
+//     | string
+//     | object
+//     | null
+//     | undefined
+//     | bigint
+//     | symbol
+//     | HTMLElement
+// function is(entity: unknown, matchType: MatchType): entity is MatchType{
+//     return typeof entity === matchType
+// }
+// function isNumber(n: number | string[] | boolean): n is number {
+//     return typeof n === "number"
+// }
+//
+//
+// interface Car {
+//     engine: string
+//     wheels: string
+// }
+//
+// interface Ship {
+//     engine: string
+//     sail: string
+// }
+//
+// function repairVehicle(vehicle: Car | Ship){
+//     if(isCar(vehicle)){
+//         console.log(vehicle.wheels)
+//     }
+//     else if(isShip(vehicle)) {
+//         console.log(vehicle.sail)
+//     }
+//     else {
+//         console.log(vehicle)
+//     }
+// }
+//
+// repairVehicle({sail: '10', engine: 'db900'})
+//
+// function isCar(vehicle: Car | Ship): vehicle is Car{
+//     return 'wheels' in vehicle
+// }
+//
+// function isShip(vehicle: Car | Ship): vehicle is Ship{
+//     return 'sail' in vehicle
+// }
 
-interface Car {
-    engine: string
-    wheels: string
-}
+//
+// interface Square {
+//     side: number,
+//     area: number
+// }
+//
+// interface Rect {
+//     a: number,
+//     b: number,
+//     area: number
+// }
+// function calc(side: number): Square
+// function calc(a: number, b: number): Rect
+// function calc(a: number, b?: number): Square | Rect {
+//     if (b) {
+//         const rect: Rect = {a, b, area: a * b}
+//         return rect
+//     }
+//     else {
+//         const square: Square = {area: a, side: a * a}
+//         return square
+//     }
+// }
+//
+// console.log(calc(10))
+// console.log(calc(10, 20))
+//
+// interface ResponsePromise<T> {
+//     message: string;
+//     status: number;
+//     data: T
+// }
+//
+// const data: ResponsePromise<{quantity: number}> = {
+//     data: {
+//         quantity: 6
+//     },
+//     status: 0,
+//     message: 'Ok'
+// }
+//
+// const response: ResponsePromise<{todos: {items: string[]}}> = {
+//     data: {
+//         todos: {items: ['1', '2', '3', '4', '5', '6']}
+//     },
+//     status: 0,
+//     message: 'Todos loaded'
+// }
 
-interface Ship {
-    engine: string
-    sail: string
-}
-
-function repairVehicle(vehicle: Car | Ship){
-    if(isCar(vehicle)){
-        console.log(vehicle.wheels)
-    }
-    else if(isShip(vehicle)) {
-        console.log(vehicle.sail)
-    }
-    else {
-        vehicle
-    }
-}
-
-repairVehicle({wheels: '3', engine: 'db900'})
-
-function isCar(vehicle: Car | Ship): vehicle is Car{
-    return 'wheels' in vehicle
-}
-
-function isShip(vehicle: Car | Ship): vehicle is Ship{
-    return 'sail' in vehicle
-}
